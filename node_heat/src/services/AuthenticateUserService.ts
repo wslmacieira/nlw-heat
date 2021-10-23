@@ -64,22 +64,22 @@ export class AuthenticateUserService {
           name,
         },
       });
-
-      const token = sign(
-        {
-          user: {
-            id: user.id,
-            name: user.name,
-            avatar_url: user.avatar_url,
-          },
-        },
-        process.env.JWT_SECRET as string,
-        {
-          subject: user.id,
-          expiresIn: "1d",
-        }
-      );
-      return { token, user };
     }
+
+    const token = sign(
+      {
+        user: {
+          id: user.id,
+          name: user.name,
+          avatar_url: user.avatar_url,
+        },
+      },
+      process.env.JWT_SECRET as string,
+      {
+        subject: user.id,
+        expiresIn: "1d",
+      }
+    );
+    return { token, user };
   }
 }
