@@ -9,5 +9,5 @@ defmodule HeatTags.Messages.Create do
   end
 
   defp handle_insert({:ok, %Message{}} = result), do: result
-  defp handle_insert({:error, result}), do: {:error, %{result: result, stattus: :bad_request}}
+  defp handle_insert({:error, result}), do: {:error, %{result: result, status: :bad_request}}
 end
