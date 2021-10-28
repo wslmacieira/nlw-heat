@@ -32,7 +32,7 @@ export function Button({
       style={[styles.button, { backgroundColor }]}
       {...rest}
       activeOpacity={0.7}
-      disabled
+      disabled={isLoading}
     >
       {isLoading ? (
         <ActivityIndicator color={color} />
